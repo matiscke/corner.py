@@ -22,7 +22,7 @@ def corner(xs, bins=20, range=None, weights=None, color="k", hist_bin_factor=1,
            labels=None, label_kwargs=None,
            show_titles=False, title_fmt=".2f", title_kwargs=None,
            truths=None, truth_color="#4682b4",
-           scale_hist=False, quantiles=None, verbose=False, fig=None,
+           scale_hist=False, quantiles=None, verbose=False, fig=None, axes=None,
            max_n_ticks=5, top_ticks=False, use_math_text=False, reverse=False,
            hist_kwargs=None, **hist2d_kwargs):
     """
@@ -227,7 +227,8 @@ def corner(xs, bins=20, range=None, weights=None, color="k", hist_bin_factor=1,
         fig, axes = pl.subplots(K, K, figsize=(dim, dim))
     else:
         try:
-            axes = np.array(fig.axes).reshape((K, K))
+            # axes = np.array(fig.axes).reshape((K, K))
+            axes = np.array(axes).reshape((K, K))
         except:
             raise ValueError("Provided figure has {0} axes, but data has "
                              "dimensions K={1}".format(len(fig.axes), K))
