@@ -230,8 +230,9 @@ def corner(xs, bins=20, range=None, weights=None, color="k", hist_bin_factor=1,
             # axes = np.array(fig.axes).reshape((K, K))
             axes = np.array(axes).reshape((K, K))
         except:
-            raise ValueError("Provided figure has {0} axes, but data has "
-                             "dimensions K={1}".format(len(fig.axes), K))
+            # raise ValueError("Provided figure has {0} axes, but data has "
+            #                  "dimensions K={1}".format(len(fig.axes), K))
+            pass
 
     # Format the figure.
     lb = lbdim / dim
